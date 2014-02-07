@@ -1,7 +1,7 @@
 '''
 Created on Jan 24, 2014
 
-@author: julian
+@author: julian Garrido
 '''
 
 import os
