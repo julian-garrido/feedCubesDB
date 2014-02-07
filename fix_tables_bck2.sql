@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.11
 -- Dumped by pg_dump version 9.3.1
--- Started on 2014-02-07 10:25:37 CET
+-- Started on 2014-02-07 10:36:07 CET
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -16,7 +16,7 @@ SET client_min_messages = warning;
 SET search_path = vodata_cubes, pg_catalog;
 
 --
--- TOC entry 2258 (class 0 OID 131347)
+-- TOC entry 2262 (class 0 OID 131347)
 -- Dependencies: 171
 -- Data for Name: CharFluxAxis; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -25,7 +25,7 @@ INSERT INTO "CharFluxAxis" ("ID", "AxisName", "UCD", "Unit") VALUES (1, NULL, NU
 
 
 --
--- TOC entry 2285 (class 0 OID 0)
+-- TOC entry 2291 (class 0 OID 0)
 -- Dependencies: 170
 -- Name: CharFluxAxis_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -34,7 +34,7 @@ SELECT pg_catalog.setval('"CharFluxAxis_ID_seq"', 1, true);
 
 
 --
--- TOC entry 2260 (class 0 OID 131420)
+-- TOC entry 2264 (class 0 OID 131420)
 -- Dependencies: 183
 -- Data for Name: CharSpatialAxis; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -43,7 +43,7 @@ INSERT INTO "CharSpatialAxis" ("ID", "AxisName", "UCD", "Unit") VALUES (1, NULL,
 
 
 --
--- TOC entry 2286 (class 0 OID 0)
+-- TOC entry 2292 (class 0 OID 0)
 -- Dependencies: 182
 -- Name: CharSpatialAxis_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -52,7 +52,7 @@ SELECT pg_catalog.setval('"CharSpatialAxis_ID_seq"', 1, true);
 
 
 --
--- TOC entry 2262 (class 0 OID 131443)
+-- TOC entry 2266 (class 0 OID 131443)
 -- Dependencies: 187
 -- Data for Name: CharSpectralAxis; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -61,7 +61,7 @@ INSERT INTO "CharSpectralAxis" ("ID", "AxisName", "UCD", "Unit") VALUES (1, NULL
 
 
 --
--- TOC entry 2287 (class 0 OID 0)
+-- TOC entry 2293 (class 0 OID 0)
 -- Dependencies: 186
 -- Name: CharSpectralAxis_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -70,7 +70,7 @@ SELECT pg_catalog.setval('"CharSpectralAxis_ID_seq"', 1, true);
 
 
 --
--- TOC entry 2264 (class 0 OID 131685)
+-- TOC entry 2268 (class 0 OID 131685)
 -- Dependencies: 227
 -- Data for Name: DataSetSubType; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -79,7 +79,7 @@ INSERT INTO "DataSetSubType" ("ID", "Label") VALUES (1, 'Cube');
 
 
 --
--- TOC entry 2288 (class 0 OID 0)
+-- TOC entry 2294 (class 0 OID 0)
 -- Dependencies: 226
 -- Name: DataSetSubType_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -88,7 +88,7 @@ SELECT pg_catalog.setval('"DataSetSubType_ID_seq"', 1, true);
 
 
 --
--- TOC entry 2266 (class 0 OID 131694)
+-- TOC entry 2270 (class 0 OID 131694)
 -- Dependencies: 229
 -- Data for Name: DataSetType; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -97,7 +97,7 @@ INSERT INTO "DataSetType" ("ID", "Label") VALUES (1, 'Cube');
 
 
 --
--- TOC entry 2289 (class 0 OID 0)
+-- TOC entry 2295 (class 0 OID 0)
 -- Dependencies: 228
 -- Name: DataSetType_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -106,7 +106,7 @@ SELECT pg_catalog.setval('"DataSetType_ID_seq"', 1, true);
 
 
 --
--- TOC entry 2268 (class 0 OID 131712)
+-- TOC entry 2272 (class 0 OID 131712)
 -- Dependencies: 233
 -- Data for Name: Facility; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -115,7 +115,7 @@ INSERT INTO "Facility" ("ID", "Label") VALUES (1, 'Westerbork Synthesis Radio Te
 
 
 --
--- TOC entry 2290 (class 0 OID 0)
+-- TOC entry 2296 (class 0 OID 0)
 -- Dependencies: 232
 -- Name: Facility_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -124,7 +124,7 @@ SELECT pg_catalog.setval('"Facility_ID_seq"', 1, true);
 
 
 --
--- TOC entry 2270 (class 0 OID 131721)
+-- TOC entry 2274 (class 0 OID 131721)
 -- Dependencies: 235
 -- Data for Name: Format; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -134,7 +134,7 @@ INSERT INTO "Format" ("ID", "Label") VALUES (1, 'FITS');
 
 
 --
--- TOC entry 2291 (class 0 OID 0)
+-- TOC entry 2297 (class 0 OID 0)
 -- Dependencies: 234
 -- Name: Format_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -143,7 +143,7 @@ SELECT pg_catalog.setval('"Format_ID_seq"', 2, true);
 
 
 --
--- TOC entry 2272 (class 0 OID 131730)
+-- TOC entry 2276 (class 0 OID 131730)
 -- Dependencies: 237
 -- Data for Name: Instrument; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -152,7 +152,7 @@ INSERT INTO "Instrument" ("ID", "Label") VALUES (1, 'WSRT');
 
 
 --
--- TOC entry 2292 (class 0 OID 0)
+-- TOC entry 2298 (class 0 OID 0)
 -- Dependencies: 236
 -- Name: Instrument_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -161,7 +161,7 @@ SELECT pg_catalog.setval('"Instrument_ID_seq"', 1, true);
 
 
 --
--- TOC entry 2274 (class 0 OID 131739)
+-- TOC entry 2278 (class 0 OID 131739)
 -- Dependencies: 239
 -- Data for Name: Line; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -170,7 +170,7 @@ INSERT INTO "Line" ("ID", "Label", "RestFrequency") VALUES (1, NULL, 1420405752)
 
 
 --
--- TOC entry 2293 (class 0 OID 0)
+-- TOC entry 2299 (class 0 OID 0)
 -- Dependencies: 238
 -- Name: Line_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -179,7 +179,7 @@ SELECT pg_catalog.setval('"Line_ID_seq"', 1, true);
 
 
 --
--- TOC entry 2276 (class 0 OID 131748)
+-- TOC entry 2280 (class 0 OID 131748)
 -- Dependencies: 241
 -- Data for Name: Polarization; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -188,7 +188,7 @@ INSERT INTO "Polarization" ("ID", "Label") VALUES (1, 'L');
 
 
 --
--- TOC entry 2294 (class 0 OID 0)
+-- TOC entry 2300 (class 0 OID 0)
 -- Dependencies: 240
 -- Name: Polarization_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -197,7 +197,7 @@ SELECT pg_catalog.setval('"Polarization_ID_seq"', 1, true);
 
 
 --
--- TOC entry 2278 (class 0 OID 131796)
+-- TOC entry 2282 (class 0 OID 131796)
 -- Dependencies: 251
 -- Data for Name: ServiceResponse; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -377,7 +377,7 @@ INSERT INTO "ServiceResponse" ("ID", "Order", "LabelModel", "LabelColumn", "Desc
 
 
 --
--- TOC entry 2295 (class 0 OID 0)
+-- TOC entry 2301 (class 0 OID 0)
 -- Dependencies: 250
 -- Name: ServiceResponse_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -386,7 +386,25 @@ SELECT pg_catalog.setval('"ServiceResponse_ID_seq"', 1, false);
 
 
 --
--- TOC entry 2280 (class 0 OID 131840)
+-- TOC entry 2284 (class 0 OID 131817)
+-- Dependencies: 253
+-- Data for Name: Tapering; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
+--
+
+INSERT INTO "Tapering" ("ID", "Label") VALUES (1, 'GAUSSIAN');
+
+
+--
+-- TOC entry 2302 (class 0 OID 0)
+-- Dependencies: 252
+-- Name: Tapering_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
+--
+
+SELECT pg_catalog.setval('"Tapering_ID_seq"', 1, true);
+
+
+--
+-- TOC entry 2286 (class 0 OID 131840)
 -- Dependencies: 257
 -- Data for Name: TargetClass; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -395,7 +413,7 @@ INSERT INTO "TargetClass" ("ID", "Label") VALUES (1, 'Galaxy');
 
 
 --
--- TOC entry 2296 (class 0 OID 0)
+-- TOC entry 2303 (class 0 OID 0)
 -- Dependencies: 256
 -- Name: TargetClass_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
@@ -403,7 +421,7 @@ INSERT INTO "TargetClass" ("ID", "Label") VALUES (1, 'Galaxy');
 SELECT pg_catalog.setval('"TargetClass_ID_seq"', 1, true);
 
 
--- Completed on 2014-02-07 10:25:37 CET
+-- Completed on 2014-02-07 10:36:07 CET
 
 --
 -- PostgreSQL database dump complete
