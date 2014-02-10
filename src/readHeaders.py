@@ -34,15 +34,15 @@ class whispCubes(object):
         '''
         #get full path for files in the folder
         fullpathList = (os.path.join(folder, x) for x in os.listdir(folder))
-        files = [f for f in fullpathList if os.path.isfile(f) and (f.endswith("cl.fits") or f.endswith("cl.fit"))]
+        self.files = [f for f in fullpathList if os.path.isfile(f) and (f.endswith("cl.fits") or f.endswith("cl.fit"))]
          
         
-        for file in files:
+        for file in self.files:
             print file
         
         #file = files[4]
         #hdr = fits.getheader(file)
-        self.hdrlist = [fits.getheader(file) for file in files]
+        #self.hdrlist = [fits.getheader(file) for file in files]
             
     
     def initIDCounters(self):
@@ -62,7 +62,6 @@ class whispCubes(object):
         self.DATA_SET_IMAGE_ID = 1
         self.PROVENANCE_ID = 1
         self.TAPERING_ID = 2
-        self.DATA_SET_LINES_ID = 1
         self.PROVENANCE_ID = 1
         
         
@@ -72,11 +71,12 @@ class whispCubes(object):
         self.TAPERING_ID_GAUSSIAN = 1
         self.FACILITY_ID= 1
         self.INSTRUMENT_ID = 1
-        
-        #to be removed
-        self.CHAR_FLUX_LINE_AXIS_ID = 1
-        self.CHAR_FLUX_LINE_ID = 1
-        self.CHAR_VELOCITY_AXIS = 1
+        self.FORMAT_ID = 1
+        self.DATASETTYPE_ID = 1
+        self.DATASETSUBTYPE_ID = 1
+        self.CHAR_SPECTRA_AXIS_ID = 1
+        self.CHAR_SPATIAL_AXIS_ID = 1
+        self.CHAR_FLUX_AXIS_ID = 1
         self.TARGETCLASS_ID = 1
         
     def increaseIDCounters(self):
@@ -93,7 +93,6 @@ class whispCubes(object):
         self.DATA_SET_IMAGE_ID += 1
         self.PROVENANCE_ID += 1
         self.TAPERING_ID += 1
-        self.PROVENANCE_ID += 1
 
         
     def createSQLcommands(self):
@@ -104,8 +103,8 @@ class whispCubes(object):
             f = open(self.outputPath, "w")
             try:
                 #f.writelines(lines) # Write a sequence of strings to a file
-                i = 1
-                for hdr in self.hdrlist :
+                for file in self.files :
+                    hdr = fits.getheader(file) 
                     try:
                         f.write("\n\n-- Data for Name: CharTime; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes\n")
                         f.write("INSERT INTO \"CharTime\" (ID, Location) VALUES ({}, {});\n".format(self.CHAR_TIME_ID, hdr['DATE-OBS']))
@@ -193,7 +192,18 @@ class whispCubes(object):
                     f.write("INSERT INTO \"Target\" (ID, Name, Velocity, TargetClass_ID) VALUES ({}, '{}', {}, {});\n".format(
                                 self.TARGET_ID, hdr['OBJECT'], hdr['VELR'], self.TARGETCLASS_ID))
                     
+                                        
+                    f.write("\n-- Data for Name: DataSet; Type: TABLE DATA; Schema: vodata_cubes; Owner: vodata_cubes\n")
                     
+                    statinfo = os.stat(file)
+                    size = statinfo.st_size
+                    length = hdr['NAXIS1'] * hdr['NAXIS2'] * hdr['NAXIS3']
+                    f.write("INSERT INTO \"DataSet\" (ID, AcReference, Size, DataLength, Format_ID, DataSetType_ID, DataSetSubType_ID, Provenance_ID, Target_ID, \n")
+                    f.write("DataSetImage_ID, CharSpectral_ID, CharSpectralAxis_ID, CharSpatialAxis_ID, CharSpatial_ID, CharFluxAxis_ID, CharFlux_ID, CharTime_ID \n")
+                    f.write("   VALUES ('{}', {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {});\n".format(
+                                self.DATA_SET_ID, file, size/1024, length, self.FORMAT_ID, self.DATASETTYPE_ID, self.DATASETSUBTYPE_ID, self.PROVENANCE_ID, self.TARGET_ID, 
+                                self.DATA_SET_IMAGE_ID, self.CHAR_SPECTRAL_ID, self.CHAR_SPECTRA_AXIS_ID, self.CHAR_SPATIAL_AXIS_ID, self.CHAR_SPATIAL_ID, 
+                                self.CHAR_FLUX_AXIS_ID, self.CHAR_FLUX_ID, self.CHAR_TIME_ID))
                     
                     
                     self.increaseIDCounters()
