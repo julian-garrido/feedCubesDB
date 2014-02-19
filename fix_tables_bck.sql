@@ -517,7 +517,7 @@ INSERT INTO "ServiceResponse" VALUES (172, NULL, 'TargetFluxLoglb', NULL, NULL, 
 -- Name: ServiceResponse_ID_seq; Type: SEQUENCE SET; Schema: vodata_cubes; Owner: vodata_cubes
 --
 
-SELECT pg_catalog.setval('"ServiceResponse_ID_seq"', 1, false);
+SELECT pg_catalog.setval('"ServiceResponse_ID_seq"', 172, true);
 
 
 --
